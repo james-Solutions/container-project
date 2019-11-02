@@ -14,13 +14,13 @@ services:
     container_name: my-flask
     build: .
     # command: gunicorn -b 0.0.0.0:8000 - app:app
-    volumes:
-       - ./:/app
+    # Use volumes to create storage containers.
+    #volumes:
     #   - app_data:/app
     # Place your environment variables here (i.e. DATABASE_HOST=db)
     # environment:
     #  - DATABASE_HOST=db
 
-#Place your volumes here 
+#Place your persistant volumes here 
 #volumes:
 #   app_data:
