@@ -12,7 +12,6 @@ services:
       - web
   web:
     container_name: my-flask
-    build: .
     # command: gunicorn -b 0.0.0.0:8000 - app:app
     # Use volumes to create storage containers.
     volumes:
