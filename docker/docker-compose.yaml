@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   nginx:
@@ -15,12 +15,12 @@ services:
     build: .
     # command: gunicorn -b 0.0.0.0:8000 - app:app
     # Use volumes to create storage containers.
-    #volumes:
+    volumes:
+      - /home/jxbromley/my_volume:/storage
     #   - app_data:/app
     # Place your environment variables here (i.e. DATABASE_HOST=db)
     # environment:
     #  - DATABASE_HOST=db
-
-#Place your persistant volumes here 
+#Place your persistant volumes here
 #volumes:
 #   app_data:
