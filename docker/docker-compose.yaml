@@ -14,7 +14,7 @@ services:
     container_name: my-flask
     image: python:3.7
     environment:
-      - APP_HOME: "/app"
+      - APP_HOME: /app
     working_dir: "$APP_HOME"
     command: bash -c "pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
     # Use volumes to create storage containers.
