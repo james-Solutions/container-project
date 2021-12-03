@@ -8,9 +8,8 @@ services:
       - 80:80
     depends_on:
       - web
-    command: cp /app/nginx/nginx.conf /etc/nginx/conf.d
     volumes:
-      - ./nginx/nginx.conf:/app/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/conf.d
   web:
     container_name: my-flask
     image: python:3.7
