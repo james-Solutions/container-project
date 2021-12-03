@@ -12,8 +12,10 @@ services:
       - web
   web:
     container_name: my-flask
-    build: .
-    # command: gunicorn -b 0.0.0.0:8000 - app:app
+    image: docker_web
+    environment:
+      - APP_HOME=/app
+    command: [pip install gunicorn flask, gunicorn -b 0.0.0.0:8000 - app:app]
     # Use volumes to create storage containers.
     volumes:
       - /home/jxbromley/my_volume:/storage
