@@ -8,13 +8,14 @@ services:
       - 80:80
     depends_on:
       - web
+    command: nginx -c /app/nginx/nginx.conf
     volumes:
       - ./nginx/nginx.conf:/app/nginx
   web:
     container_name: my-flask
     image: python:3.7
     working_dir: "$APP_HOME"
-    command: bash -c "cp /app/nginx/nginx.conf /etc/nginx/conf.d && pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
+    command: bash -c "pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
     # Use volumes to create storage containers.
     volumes:
       - ./app.py:/app/app.py
