@@ -12,7 +12,7 @@ services:
       - web
   web:
     container_name: my-flask
-    image: python:3.7:app
+    image: python:3.7
     environment:
       - APP_HOME=/app
     command: [pip install gunicorn flask, gunicorn -b 0.0.0.0:8000 - app:app]
