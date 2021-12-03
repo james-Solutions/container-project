@@ -17,6 +17,7 @@ services:
     command: bash -c "pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
     # Use volumes to create storage containers.
     volumes:
+      - ./app.py:/app/app.py
       - /home/jxbromley/my_volume:/storage
     #   - app_data:/app
     # Place your environment variables here (i.e. DATABASE_HOST=db)
