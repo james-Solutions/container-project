@@ -8,9 +8,6 @@ services:
       - 80:80
     depends_on:
       - web
-    command: rm /etc/nginx/conf.d/default.conf
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d
   web:
     container_name: my-flask
     image: python:3.7
