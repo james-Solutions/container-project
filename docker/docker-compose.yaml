@@ -8,7 +8,6 @@ services:
       - 80:80
     depends_on:
       - web
-    command: nginx -c /app/nginx/nginx.conf
     volumes:
       - ./nginx/nginx.conf:/app/nginx
   web:
