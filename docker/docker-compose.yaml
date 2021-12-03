@@ -8,6 +8,8 @@ services:
       - 80:80
     depends_on:
       - web
+    volumes:
+      - ./nginx/nginx.conf:/app/nginx
   web:
     container_name: my-flask
     image: python:3.7
@@ -17,7 +19,6 @@ services:
     volumes:
       - ./app.py:/app/app.py
       - ./templates:/app/templates
-      - ./nginx/nginx.conf:/app/nginx
       - /home/jxbromley/my_volume:/storage
     #   - app_data:/app
     # Place your environment variables here (i.e. DATABASE_HOST=db)
