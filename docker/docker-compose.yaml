@@ -12,7 +12,7 @@ services:
     container_name: my-flask
     image: python:3.7
     working_dir: "$APP_HOME"
-    command: bash -c "rm /etc/nginx/conf.d/default.conf && cp /app/nginx/nginx.conf /etc/nginx/conf.d && pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
+    command: bash -c "cp /app/nginx/nginx.conf /etc/nginx/conf.d && pip install gunicorn flask && gunicorn -b 0.0.0.0:8000 app:app"
     # Use volumes to create storage containers.
     volumes:
       - ./app.py:/app/app.py
