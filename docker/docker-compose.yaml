@@ -12,7 +12,6 @@ services:
       - web
   web:
     container_name: my-flask
-    image: docker_web
     environment:
       - APP_HOME=/app
     command: [pip install gunicorn flask, gunicorn -b 0.0.0.0:8000 - app:app]
