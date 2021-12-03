@@ -18,6 +18,7 @@ services:
     # Use volumes to create storage containers.
     volumes:
       - ./app.py:/app/app.py
+      - ./templates:/app/templates
       - /home/jxbromley/my_volume:/storage
     #   - app_data:/app
     # Place your environment variables here (i.e. DATABASE_HOST=db)
